@@ -11,7 +11,7 @@
     <div id="calculadora">
     <input type="text" id="visor">
     <div id="botoes">
-    <button class="funcional" id="btn_ponto">.</button>
+    <button class="btn_num" id="btn_ponto">.</button>
     <button class="funcional" id="btn_c">C</button>
     <button class="funcional" id="btn_ce">CE</button>
     <button class="funcional" id="btn_mais_menos">±</button>    
@@ -35,9 +35,13 @@
     </div>
     <script>
         $(document).ready(function(){
-        $('#botao').click(function(){ 
-            
-        });
+        $('.btn_num, .operacao').click(function() {
+        let valorTeclado = $(this).text();
+        $('#visor').val($('#visor').val() + valorTeclado);
+        $('#btn_ce').click(function() {
+        $('#visor').val('');
+});
+});
 });
     </script>
 </body>
