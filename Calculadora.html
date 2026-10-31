@@ -36,6 +36,11 @@
         </div>
     </div>
     <script>
+        let valorAnterior = '';
+        let ValorAtual = '';
+        let operacaoAtual = null;
+        let limparVisor = false;
+        
         $(document).ready(function () {
             $('.btn_num, .operacao').click(function () {
                 let valorTeclado = $(this).text();
@@ -51,6 +56,10 @@
             let valorAtual = $('#visor').val();
             $('#visor').val(valorAtual.slice(0, -1));
         });
+        $('.operacao').click(function(){
+            let valorAtual = $('#visor').val();
+
+        })
     </script>
 </body>
 
