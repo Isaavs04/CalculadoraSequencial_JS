@@ -9,7 +9,6 @@ $('.btn_num, .operacao').click(function () {
     let valorTeclado = $(this).text();
     if (valorTeclado != '=') {
         $('#visor').val($('#visor').val() + valorTeclado);
-        calculoParcial();
     }
     estadosBtn();
 });
@@ -30,7 +29,9 @@ $('#btn_c').click(function () {
 $('.operacao').click(function () {
     valorAnterior = parseFloat($('#visor').val());
     let operadorClicado = $(this).text();
+    calculoParcial(operadorClicado);
     if (operadorClicado != '=') {
+        estadosBtn();
         operacaoAtual = operadorClicado;
     }
 })
@@ -77,13 +78,17 @@ function calcular(valorAtual, num, operacaoAtual) {
     let resultado = operacoes[operacaoAtual](valorAtual, num);
     return resultado;
 }
-function calculoParcial() {
+function calculoParcial(btnClicado) {
     try {
+        let segundoNumero;
+        let resultadoParcial;
         let partes = $('#visor').val().split(/[\+\-\x\/\%]/);
-        if (partes.length == 3) {
-            let segundoNumero = parseFloat(partes[1]);
-            let resultadoParcial = calcular(valorAnterior, segundoNumero, operacaoAtual)
+        if(partes.length == 3){
+            segundoNumero = parseFloat(partes[1]);
+            resultadoParcial = calcular(valorAnterior, segundoNumero, operacaoAtual)
             $('#visor').val(resultadoParcial);
+            operacaoAtual = $(this).text();
+            $('#visor').val($('#visor').val() + btnClicado)
             valorAtual = resultadoParcial;
         }
     }
@@ -91,6 +96,7 @@ function calculoParcial() {
         alert('Erro no cálculo: ' + error.message);
     }
 }
+//Controle de estados do código
 function estadosBtn() {
     let visorVal = $('#visor').val();
     let teclaPressionada = $(this).text();
