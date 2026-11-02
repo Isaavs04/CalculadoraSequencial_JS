@@ -9,12 +9,16 @@ $('.btn_num, .operacao').click(function () {
     let valorTeclado = $(this).text();
     if (valorTeclado != '=') {
         $('#visor').val($('#visor').val() + valorTeclado);
+        calculoParcial();
     }
     estadosBtn();
 });
 //Tecla CE apaga o visor quando é pressionada
 $('#btn_ce').click(function () {
     $('#visor').val('');
+    $('.btn_num').prop('disabled', false);
+    $('.operacao, .funcional, #btn_ponto').prop('disabled', true);
+    $('#btn_menos').prop('disabled', false);
     estadosBtn();
 });
 //Tecla C apaga o último caractere do visor quando é pressionada
@@ -55,6 +59,11 @@ $('#btn_igual').click(function () {
         estadosBtn();
     }
 })
+$('#btn_mais_menos').click(function(){
+    let textoVisor = parseFloat($('#visor').val());
+    let mudancaSinal = textoVisor * (-1);
+    $('#visor').val(mudancaSinal);
+})
 function calcular(valorAtual, num, operacaoAtual) {
     valorAtual = parseFloat(valorAtual);
     num = parseFloat(num);
@@ -71,7 +80,7 @@ function calcular(valorAtual, num, operacaoAtual) {
 function calculoParcial() {
     try {
         let partes = $('#visor').val().split(/[\+\-\x\/\%]/);
-        if (partes.length >= 2) {
+        if (partes.length == 3) {
             let segundoNumero = parseFloat(partes[1]);
             let resultadoParcial = calcular(valorAnterior, segundoNumero, operacaoAtual)
             $('#visor').val(resultadoParcial);
@@ -98,7 +107,7 @@ function estadosBtn() {
             $('.operacao, .funcional, .btn_num').prop('disabled', false)
         }
     }
-    else if (visorVal == '' && teclaPressionada != 'ce') {
+    else if (visorVal == '') {
         $('.operacao, .funcional, #btn_ponto').prop('disabled', true)
 
     }
