@@ -69,16 +69,28 @@ justify-content: center;
   background-color: #e0e0e0;
 }
 
-/* Todo botão que estiver com disabled ativado ganha essa cor automaticamente */
+/*Todo botão que estiver com disabled ativado ganha essa cor automaticamente*/
 .btn_num:disabled {
-    background-color: #84848441 !important; /* Um vermelho forte para você enxergar na hora */
-    color: #1c0971 !important;           /* Texto branco para destacar */
+    background-color: #84848441 !important; 
+    color: #1c0971 !important;           
 }
 .operacao:disabled {
-    background-color: #7a1bf673 !important; /* Um vermelho forte para você enxergar na hora */
-    color: #501e5a !important;           /* Texto branco para destacar */
+    background-color: #7a1bf673 !important;
+    color: #501e5a !important;           
 }
 .funcional:disabled {
-    background-color: #009dff6c !important; /* Um vermelho forte para você enxergar na hora */
-    color: #46496b !important;           /* Texto branco para destacar */
+    background-color: #009dff6c !important;
+    color: #46496b !important;           
+}
+
+/*houver personalizado para cada botão*/
+.btn_num:hover{
+  background-color: #e5e5e5;
+  border: 1px solid #e5e5e5;
+}
+.operacao:hover{
+  background-color: #5700c8;
+}
+.funcional:hover{
+  background-color: #0185d8;
 }
