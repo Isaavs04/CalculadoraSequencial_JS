@@ -4,11 +4,11 @@ body {
   align-items: center;    
   height: 100vh;           
   margin: 0;              
-  background-color: #f0f2f5;
+  background-color: #cac9e3;
 }
 
 #botoes {
-    height: 300px;
+  height: 300px;
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
   gap: 8px;
@@ -18,31 +18,33 @@ body {
 }
 
 .btn_num {
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border: 1px solid #fefefe;
   border-radius: 4px;
+  box-shadow: 0 3px 3px rgba(47, 9, 82, 0.592);
 }
 .operacao {
-  background-color: #4CAF50;
+  background-color: #791bf6;
   color: white;
   border: none;
   border-radius: 4px;
+  box-shadow: 0 4px 4px rgba(47, 9, 82, 0.632);
 }
 .funcional {
-  background-color: #f44336;
+  background-color: #009dff;
   color: white;
   border: none;
   border-radius: 4px;
+  box-shadow: 0 4px 4px rgba(47, 9, 82, 0.607);
 }
 
 #calculadora {
   width: 450px;
   height: 300x;
-  background-color: #fff;
-  border: 1px solid #000000;
+  background-color: #f6f6f6;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(47, 9, 82, 0.605);
 }
 
 #visor {
@@ -52,8 +54,9 @@ justify-content: center;
   margin-bottom: 10px;
   padding: 5px;
   font-size: 20px;
-  border: 1px solid #000000;
+  border: 1px solid #0008ff;
   border-radius: 4px;
+  box-shadow: 0 4px 4px rgba(47, 9, 82, 0.26);
 }
 
 .btn_num:hover {
@@ -67,7 +70,15 @@ justify-content: center;
 }
 
 /* Todo botão que estiver com disabled ativado ganha essa cor automaticamente */
-button:disabled {
-    background-color: #ffd54d !important; /* Um vermelho forte para você enxergar na hora */
-    color: #ff0000 !important;           /* Texto branco para destacar */
+.btn_num:disabled {
+    background-color: #84848441 !important; /* Um vermelho forte para você enxergar na hora */
+    color: #1c0971 !important;           /* Texto branco para destacar */
+}
+.operacao:disabled {
+    background-color: #7a1bf673 !important; /* Um vermelho forte para você enxergar na hora */
+    color: #501e5a !important;           /* Texto branco para destacar */
+}
+.funcional:disabled {
+    background-color: #009dff6c !important; /* Um vermelho forte para você enxergar na hora */
+    color: #46496b !important;           /* Texto branco para destacar */
 }

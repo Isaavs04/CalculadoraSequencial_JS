@@ -103,6 +103,7 @@ function estadosBtn() {
     if (visorVal != '') {
         if (visorVal == 'Error') {
             $('.operacao, .btn_num, #btn_c').prop('disabled', true);
+            $('#btn_mais_menos').prop('disabled', true)
 
         }
         else if (terminComOperador()) {
