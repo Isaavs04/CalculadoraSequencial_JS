@@ -65,3 +65,9 @@ justify-content: center;
 .operacao:hover {
   background-color: #e0e0e0;
 }
+
+/* Todo botão que estiver com disabled ativado ganha essa cor automaticamente */
+button:disabled {
+    background-color: #ffd54d !important; /* Um vermelho forte para você enxergar na hora */
+    color: #ff0000 !important;           /* Texto branco para destacar */
+}
